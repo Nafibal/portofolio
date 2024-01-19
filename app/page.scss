@@ -1,0 +1,324 @@
+@import "./base.scss";
+
+.about_main {
+  min-height: 100vh;
+
+  section {
+    min-height: 100vh;
+  }
+
+  .hero {
+    position: relative;
+    height: 610vh;
+    z-index: 3;
+
+    .title {
+      width: 100%;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 10rem;
+      text-align: center;
+      // text-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+
+      position: fixed;
+      transform: translateY(40vh);
+      z-index: 0;
+
+      clip-path: inset(100% 0 0 0);
+
+      // visibility: hidden;
+
+      span {
+        color: #a4161a;
+      }
+    }
+
+    .image {
+      background-color: gray;
+      position: absolute;
+      background-position: 50% 30%;
+      background-size: auto 150%;
+      background-repeat: no-repeat;
+      clip-path: inset(100% 0 0 0);
+
+      &:nth-child(2) {
+        width: 20vw;
+        height: 50vh;
+        left: 8vw;
+        top: 50vh;
+        z-index: -1;
+        background-image: url("../public/images/home/image-9.jpg");
+      }
+      &:nth-child(3) {
+        width: 42vw;
+        height: 50vh;
+        right: 0vw;
+        top: 80vh;
+        z-index: 1;
+        background-image: url("../public/images/home/image-2.jpg");
+      }
+      &:nth-child(4) {
+        width: 42vw;
+        height: 50vh;
+        left: 0vw;
+        top: 167vh;
+        z-index: -1;
+        background-image: url("../public/images/home/image-3.jpg");
+      }
+      &:nth-child(5) {
+        width: 18vw;
+        height: 50vh;
+        right: 15vw;
+        top: 200vh;
+        z-index: 1;
+        background-image: url("../public/images/home/image-4.jpg");
+      }
+      &:nth-child(6) {
+        width: 20vw;
+        height: 50vh;
+        right: 0vw;
+        top: 280vh;
+        z-index: 1;
+        background-image: url("../public/images/home/image-5.jpg");
+      }
+      &:nth-child(7) {
+        width: 30vw;
+        height: 85vh;
+        left: 10vw;
+        top: 335vh;
+        z-index: -1;
+        background-image: url("../public/images/home/image-6.jpg");
+      }
+      &:nth-child(8) {
+        width: 42vw;
+        height: 65vh;
+        right: 0vw;
+        top: 430vh;
+        z-index: 1;
+        background-image: url("../public/images/home/image-7.jpg");
+      }
+      &:nth-child(9) {
+        width: 33vw;
+        height: 38vh;
+        left: 30vw;
+        top: 520vh;
+        z-index: -1;
+        background-image: url("../public/images/home/image-8.jpg");
+      }
+      &:nth-child(10) {
+        width: 18vw;
+        height: 50vh;
+        left: 0vw;
+        top: 540vh;
+        z-index: -1;
+        background-image: url("../public/images/home/image-1.jpg");
+      }
+      &:nth-child(11) {
+        width: 32.5vw;
+        height: 42vh;
+        right: 10vw;
+        top: 590vh;
+        z-index: 2;
+        background-image: url("../public/images/home/image-10.jpg");
+      }
+    }
+
+    @include respon(desktop-small) {
+      h1 {
+        font-size: 8rem;
+      }
+      .image:nth-child(2) {
+        height: 40vh;
+      }
+      .image:nth-child(4) {
+        top: 160vh;
+      }
+    }
+    @include respon(tb-pot) {
+      h1 {
+        font-size: 6rem;
+      }
+      .image:nth-child(2) {
+        height: 35vh;
+      }
+      .image:nth-child(3) {
+        height: 40vh;
+      }
+      .image:nth-child(4) {
+        height: 42vh;
+        // top: 160vh;
+      }
+      .image:nth-child(5) {
+        height: 40vh;
+        width: 30vw;
+      }
+      .image:nth-child(6) {
+        height: 40vh;
+        width: 25vw;
+      }
+      .image:nth-child(7) {
+        height: 50vh;
+      }
+      .image:nth-child(10) {
+        height: 40vh;
+      }
+      .image:nth-child(11) {
+        height: 35vh;
+      }
+    }
+    @include respon(phone-land) {
+      height: 150vh;
+      .image {
+        display: none;
+      }
+    }
+    @include respon(phone-pot) {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .about {
+    position: relative;
+    z-index: 1;
+    background-color: #161a1d;
+    width: 100%;
+
+    .text_container {
+      padding: 25em 0 5em;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 2em;
+
+      p,
+      ol {
+        width: 80%;
+        max-width: 1000px;
+        font-size: 1.75rem;
+        font-family: "Pridi", serif;
+        font-weight: 200;
+        color: white;
+      }
+      ol {
+        padding-left: 1em;
+        margin-top: -1em;
+      }
+    }
+
+    .offer {
+      padding: 20rem 0;
+      display: flex;
+
+      .offer_image {
+        width: 42%;
+        height: 400px;
+        margin-right: 4em;
+        background-color: gray;
+      }
+
+      .text {
+        font-family: "Montserrat", sans-serif;
+        color: white;
+
+        h2 {
+          font-size: 2rem;
+          font-weight: 600;
+          letter-spacing: 0.2em;
+          margin-bottom: 0.75em;
+        }
+
+        li {
+          margin-bottom: 0.75em;
+          font-size: 1.5rem;
+          font-weight: 300;
+          letter-spacing: 0;
+          list-style: none;
+        }
+      }
+    }
+
+    .certification {
+      font-family: "Montserrat", sans-serif;
+      color: white;
+      padding-bottom: 30rem;
+
+      h2 {
+        margin-bottom: 10rem;
+        font-size: 2.5rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .certification_container {
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: start;
+        row-gap: 7.5rem;
+        text-decoration: none;
+        list-style: none;
+
+        li {
+          width: 30%;
+          font-size: 1.75rem;
+          font-weight: bold;
+          text-align: center;
+          color: rgba(255, 255, 255, 0.75);
+          transform: 1s;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+
+    @include respon(tb-pot) {
+      .text_container {
+        p {
+          font-size: 1.35rem;
+        }
+        li {
+          font-size: 1.35rem;
+        }
+      }
+
+      .offer {
+        .offer_image {
+          height: 250px;
+        }
+        .text {
+          h1 {
+            font-size: 1.5rem;
+          }
+          li {
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+    @include respon(phone-pot) {
+      .offer {
+        .offer_image {
+          width: 35%;
+          height: 200px;
+        }
+      }
+      .text {
+        h1 {
+          font-size: 1.25rem;
+        }
+        li {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
