@@ -3,13 +3,18 @@ import React, { useEffect, useRef } from "react";
 import "./page.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import Footer from "../comp/Footer";
+import { LocomotiveScrollProvider } from "react-locomotive-scroll";
+import Footer from "./components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
   const title = useRef();
   const about = useRef();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     gsap.to(title.current, {
@@ -142,71 +147,109 @@ export default function Home() {
   });
 
   return (
-    <div className="about_main" id="smooth-content">
-      <section className="hero">
-        <h1 className="title" ref={title}>
-          NAFI<span>BAL</span>
-        </h1>
-        <div className="image"></div>
-        <div className="image"></div>
-        <div className="image"></div>
-        <div className="image"></div>
-        <div className="image"></div>
-        <div className="image"></div>
-        <div className="image"></div>
-        <div className="image"></div>
-        <div className="image"></div>
-        <div className="image"></div>
-      </section>
-      <section className="about" ref={about}>
-        <div className="text_container">
-          <p className="about_text">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta
-            error non perferendis. Architecto, non cupiditate neque voluptates
-            cum enim veritatis!
-          </p>
-          <p className="about_text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum
-            alias beatae, totam excepturi expedita ea laborum possimus eaque
-            voluptatem nihil quo cum est accusantium quisquam earum eius magnam
-            ex! Temporibus.
-          </p>
-          {/* <p>Kami memiliki :</p>
-          <ol>
-            <li>Integritas</li>
-            <li>Loyal</li>
-            <li>Inovasi</li>
-            <li>Sikap Positif</li>
-            <li>Perbaikan Berkelanjutan</li>
-            <li>Komitmen</li>
-          </ol> */}
-        </div>
-        <div className="offer">
-          <div className="offer_image"></div>
-          <div className="text">
-            <h2 className="offer_title">Certification</h2>
-            <ul>
-              <li className="offer_list">Certification X</li>
-              <li className="offer_list">Certification X</li>
-              <li className="offer_list">Certification X</li>
-              <li className="offer_list">Certification X</li>
-              <li className="offer_list">Certification X </li>
-              <li className="offer_list">Certification X</li>
-            </ul>
+    <>
+      <div className="about_main" id="smooth-content">
+        <section className="hero">
+          <h1 className="title" ref={title}>
+            NAFI<span>BAL</span>
+          </h1>
+          <div className="image"></div>
+          <div className="image"></div>
+          <div className="image"></div>
+          <div className="image"></div>
+          <div className="image"></div>
+          <div className="image"></div>
+          <div className="image"></div>
+          <div className="image"></div>
+          <div className="image"></div>
+          <div className="image"></div>
+        </section>
+        <section className="about" ref={about}>
+          <div className="text_container">
+            <p className="about_text">
+              Hello! I'm Nafi, a passionate frontend web developer with a keen
+              eye for design and a commitment to creating engaging user
+              experiences. I have a strong foundation in HTML, CSS, and
+              JavaScript, along with proficiency in popular frontend frameworks
+              such as React.
+            </p>
+            <p className="about_text">
+              My journey into web development started with a curiosity about how
+              websites are built. Over the years, I've honed my skills through
+              hands-on projects and continuous learning. I enjoy turning ideas
+              into reality by crafting clean and efficient code that brings
+              designs to life.
+            </p>
+            <p className="about_text">
+              I enjoy solving technical problem and learning new things. I am a
+              quick learner and excel in my ability to work under pressure and
+              handle stressful situations.
+            </p>
           </div>
-        </div>
-        <div className="certification">
-          <h2 className="certification_title">Project</h2>
-          <ul className="certification_container">
-            <li className="certification_list">Project A</li>
-            <li className="certification_list">Project B</li>
+          <div className="offer">
+            <div className="offer_image"></div>
+            <div className="text">
+              <h2 className="offer_title">Certification</h2>
+              <ul>
+                <li className="offer_list">
+                  <a
+                    target="blank"
+                    href="https://drive.google.com/file/d/1B1rA2H64OZq01JX8UK57JzQRYjwbGMk5/view"
+                  >
+                    2023 Complete Front-End Engineer Career With ReactJS,
+                    Alterra Academy
+                  </a>
+                </li>
+                <li className="offer_list">
+                  <a
+                    target="blank"
+                    href="https://www.udemy.com/certificate/UC-7331c103-f12c-4aae-a56f-203ad4debda4/"
+                  >
+                    JavaScript Tutorial and Projects Course, Udemy
+                  </a>
+                </li>
+                <li className="offer_list">
+                  <a
+                    target="blank"
+                    href="https://freecodecamp.org/certification/nafibal/responsive-web-design"
+                  >
+                    Responsive Web Design, FreeCodeCamp
+                  </a>
+                </li>
+                <li className="offer_list">
+                  <a
+                    target="blank"
+                    href="https://www.dicoding.com/certificates/N9ZOE6NQ6XG5"
+                  >
+                    Belajar Membuat Front-End Web untuk Pemula, Dicoding
+                    Indonesia
+                  </a>
+                </li>
+                <li className="offer_list">
+                  <a
+                    target="blank"
+                    href="https://www.dicoding.com/certificates/RVZK1ORQ4PD5"
+                  >
+                    Belajar Dasar Pemrograman Web, Dicoding Indonesia
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="certification">
+            <h2 className="certification_title">Project</h2>
+            <ul className="certification_container">
+              <li className="certification_list">WORK IN PROGRESS</li>
+              {/* <li className="certification_list">Project B</li>
             <li className="certification_list">Project C</li>
             <li className="certification_list">Project D</li>
             <li className="certification_list">Project E</li>
-            <li className="certification_list">Project F</li>
-          </ul>
-        </div>
-      </section>
-    </div>
+            <li className="certification_list">Project F</li> */}
+            </ul>
+          </div>
+        </section>
+      </div>
+      <Footer />
+    </>
   );
 }
