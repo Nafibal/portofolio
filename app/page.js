@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -148,7 +149,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="about_main" id="smooth-content">
+      <Navbar />
+      <div className="about_main" id="home">
         <section className="hero">
           <h1 className="title" ref={title}>
             NAFI<span>BAL</span>
@@ -164,7 +166,7 @@ export default function Home() {
           <div className="image"></div>
           <div className="image"></div>
         </section>
-        <section className="about" ref={about}>
+        <section className="about" ref={about} id="about">
           <div className="text_container">
             <p className="about_text">
               Hello! I'm Nafi, a passionate frontend web developer with a keen
@@ -186,7 +188,7 @@ export default function Home() {
               handle stressful situations.
             </p>
           </div>
-          <div className="offer">
+          <div className="offer" id="certification">
             <div className="offer_image"></div>
             <div className="text">
               <h2 className="offer_title">Certification</h2>
@@ -236,7 +238,7 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          <div className="certification">
+          <div className="certification" id="projects">
             <h2 className="certification_title">Project</h2>
             <ul className="certification_container">
               <li className="certification_list">WORK IN PROGRESS</li>
